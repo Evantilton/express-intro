@@ -3,6 +3,8 @@ let express = require('express')
 
 const app = express();
 
+const PORT = 5000;
+
 app.use(express.static('server/public'));
 app.get('/', (req, res) => {
     console.log('I have been hit!')
@@ -19,5 +21,7 @@ app.get('/welcome', (req, res) => {
 
 
 
-app.listen(5000);
+app.listen(PORT, () => {
+    console.log('Up and running on port', PORT);
+});
 
